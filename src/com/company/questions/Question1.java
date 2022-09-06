@@ -1,14 +1,14 @@
 package com.company.questions;
 
+import com.company.Configuration;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class Question1 {
+public class Question1 extends Configuration {
 
     @Test
     @Tag("1")
@@ -67,21 +67,15 @@ public class Question1 {
             System.out.println(" i is " + i);
             if (numberInQuestion % i == 0) {
                 System.out.println("Is a factor.");
-                if (isPrime(i)) {
+                if (pUtil.isPrime(i)) {
                     System.out.println("Is prime! " + i);
                     primeFactors.add(i);
                 }
             }
         }
 
-        //primeFactors.remove(numberInQuestion);
         long result = primeFactors.stream().max(Comparator.comparingLong(Long::longValue)).get();
         System.out.println("---> The result is ---> " + result);
 
-    }
-
-    private static boolean isPrime(long num) {
-        BigInteger bigInteger = BigInteger.valueOf(num);
-        return bigInteger.isProbablePrime(100);
     }
 }

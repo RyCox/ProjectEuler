@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.questions.Question10;
+import com.company.questions.Question11;
 import com.company.questions.Question9;
 
 import java.util.Arrays;
@@ -14,8 +15,8 @@ public class Main {
         // TODO: Find a way to pass arg for question number.
         String questionNumber = Arrays.stream(args).filter(arg -> arg.matches("")).findFirst().orElse(null);
 
-        Question10 question = new Question10();
-        Question10.sumOfPrimes(2000000);
+        Question11 question = new Question11();
+        question.gridProduct();
 
     }
 }

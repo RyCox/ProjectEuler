@@ -1,6 +1,10 @@
 package com.company;
 
-import com.company.questions.Question2;
+import com.company.questions.Question10;
+import com.company.questions.Question11;
+import com.company.questions.Question9;
+
+import java.util.Arrays;
 
 public class Main {
 
@@ -8,8 +12,11 @@ public class Main {
 
         System.out.println("Starting program");
 
-        Question2 question = new Question2();
-        question.noRemainder();
+        // TODO: Find a way to pass arg for question number.
+        String questionNumber = Arrays.stream(args).filter(arg -> arg.matches("")).findFirst().orElse(null);
+
+        Question11 question = new Question11();
+        question.gridProduct();
 
     }
 }

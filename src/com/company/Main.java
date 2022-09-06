@@ -2,14 +2,17 @@ package com.company;
 
 import com.company.questions.Question2;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
 
         System.out.println("Starting program");
 
-        Question2 question = new Question2();
-        question.noRemainder();
+        // TODO: Find a way to pass arg for question number.
+        String questionNumber = Arrays.stream(args).filter(arg -> arg.matches("")).findFirst().orElse(null);
+        
 
     }
 }

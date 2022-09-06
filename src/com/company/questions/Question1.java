@@ -1,5 +1,8 @@
 package com.company.questions;
 
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -7,7 +10,9 @@ import java.util.List;
 
 public class Question1 {
 
-    public void multiplesOfThreeOrFive() {
+    @Test
+    @Tag("1")
+    public static void multiplesOfThreeOrFive() {
         int limit = 1000;
         List<Integer> multipleArr = new ArrayList<>();
 
@@ -29,7 +34,7 @@ public class Question1 {
     By considering the terms in the Fibonacci sequence whose values do not exceed four million,
     find the sum of the even-valued terms.
      */
-    public void fibonacciEvens() {
+    public static void fibonacciEvens() {
         long limit = 4000000;
         List<Long> fibonacciList = new ArrayList<>();
         List<Long> evenTerms = new ArrayList<>();
@@ -53,7 +58,7 @@ public class Question1 {
 
     What is the largest prime factor of the number 600851475143 ?
      */
-    public void primeFactors() {
+    public static void primeFactors() {
 
         long numberInQuestion = 600851475143L;
         List<Long> primeFactors = new ArrayList<>();
@@ -75,7 +80,7 @@ public class Question1 {
 
     }
 
-    private boolean isPrime(long num) {
+    private static boolean isPrime(long num) {
         BigInteger bigInteger = BigInteger.valueOf(num);
         return bigInteger.isProbablePrime(100);
     }

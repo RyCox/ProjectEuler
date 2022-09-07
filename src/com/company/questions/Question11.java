@@ -40,30 +40,59 @@ public class Question11 extends Configuration {
                 for (int c = 0; c < 20; c++) {
                     try {
                         // productHorizontal
-                        int product = grid[r][c] * grid[r][c + 1] * grid[r][c + 2] * grid[r][c + 3];
+                        int zero =  grid[r][c];
+                        int one = grid[r][c + 1];
+                        int two = grid[r][c + 2];
+                        int three = grid[r][c + 3];
+                        System.out.println("horizontal : " + zero + ", " + one + ", " + two + ", " + three);
+                        int product = zero * one * two * three;
                         if (product > largestProduct) {
                             largestProduct = product;
                         }
                     } catch (IndexOutOfBoundsException ex) {
-                        System.out.println("There was a problem here: horiz " + r + ", " + c);
+                        //System.out.println("There was a problem here: horiz " + r + ", " + c);
                     }
                     try {
                         // productVertical
-                        int product = grid[r][c] * grid[r + 1][c] * grid[r + 2][c] * grid[r + 3][c];
+                        int zero = grid[r][c];
+                        int one = grid[r + 1][c];
+                        int two = grid[r + 2][c];
+                        int three = grid[r + 3][c];
+                        System.out.println("vertical : " + zero + ", " + one + ", " + two + ", " + three);
+                        int product = zero * one * two * three;
                         if (product > largestProduct) {
                             largestProduct = product;
                         }
                     } catch (IndexOutOfBoundsException ex) {
-                        System.out.println("There was a problem here: vert " + r + ", " + c);
+                        //System.out.println("There was a problem here: vert " + r + ", " + c);
                     }
                     try {
-                        // productDiagonal
+                        // productDiagonal Forward
+                        int zero = grid[r][c];
+                        int one = grid[r + 1][c + 1];
+                        int two = grid[r + 2][c + 2];
+                        int three = grid[r + 3][c + 3];
+                        System.out.println("diagonal : " + zero + ", " + one + ", " + two + ", " + three);
                         int product = grid[r][c] * grid[r + 1][c + 1] * grid[r + 2][c + 2] * grid[r + 3][c + 3];
                         if (product > largestProduct) {
                             largestProduct = product;
                         }
                     } catch (IndexOutOfBoundsException ex) {
-                        System.out.println("There was a problem here: diag " + r + ", " + c);
+                        //System.out.println("There was a problem here: diag " + r + ", " + c);
+                    }
+                    try {
+                        // productDiagonal backward
+                        int zero = grid[r][c];
+                        int one = grid[r + 1][c - 1];
+                        int two = grid[r + 2][c - 2];
+                        int three = grid[r + 3][c - 3];
+                        System.out.println("diagonal back : " + zero + ", " + one + ", " + two + ", " + three);
+                        int product = zero * one * two * three;
+                        if (product > largestProduct) {
+                            largestProduct = product;
+                        }
+                    } catch (IndexOutOfBoundsException ex) {
+                        //System.out.println("There was a problem here: diag " + r + ", " + c);
                     }
                 }
             }
